@@ -1,6 +1,11 @@
 from django.db import models
+
+
 from RatePayer.models import TaxUser
 
+
+class FileCase(models.Model):
+    data = models.FileField(blank=True, null=True)
 
 # Create your models here.
 class CategoryCase(models.Model):
@@ -14,3 +19,4 @@ class Case(models.Model):
     note = models.CharField(blank=True, null=True, max_length=500)
     dateOpen = models.DateField(blank=True, null=True, max_length=200)
     dateClose = models.DateField(blank=True, null=True, max_length=200)
+    file = models.ManyToManyField(FileCase)
