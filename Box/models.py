@@ -13,8 +13,8 @@ class CategoryCase(models.Model):
 
 
 class Case(models.Model):
-    category = models.ForeignKey(CategoryCase,blank=True, null=True)
-    user = models.ForeignKey(TaxUser,blank=True, null=True)
+    category = models.ForeignKey(CategoryCase,blank=True, null=True,on_delete=models.PROTECT)
+    user = models.ForeignKey(TaxUser,blank=True, null=True,on_delete=models.PROTECT,related_name="UserBox")
     note = models.CharField(blank=True, null=True, max_length=500)
     dateOpen = models.DateField(blank=True, null=True, max_length=200)
     dateClose = models.DateField(blank=True, null=True, max_length=200)
