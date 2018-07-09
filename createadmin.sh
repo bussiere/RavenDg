@@ -1,0 +1,1 @@
+python3 manage.py createsuperuser --username=bussiere --email=bussiere@gmail.com
